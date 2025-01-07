@@ -1,0 +1,79 @@
+{
+  "id": "session-manager",
+  "name": "Session Manager",
+  "description": "An extension to quickly shutdown, reboot, hybernate, suspend and lock the pc",
+  "creator_name": "Whiskers Apps",
+  "creator_link": "https://github.com/Whiskers-Apps",
+  "repository_link": "https://github.com/Whiskers-Apps/tigris-session-manager",
+  "settings": [
+    {
+      "id": "preset",
+      "name": "Preset",
+      "description": "Select a custom set of commands for your desktop environment",
+      "setting_type": "Select",
+      "value": "auto",
+      "select_values": [
+        {
+          "id": "auto",
+          "text": "Auto"
+        },
+        {
+          "id": "kde",
+          "text": "KDE"
+        },
+        {
+          "id": "gnome",
+          "text": "Gnome"
+        },
+        {
+          "id": "hyprland",
+          "text": "Hyprland"
+        },
+        {
+          "id": "other",
+          "text": "Other (Custom Commands)"
+        }
+      ]
+    },
+    {
+      "id": "custom-shutdown",
+      "name": "Custom Shutdown",
+      "description": "Command to run when shutting down",
+      "setting_type": "Text",
+      "value": "",
+      "conditional_show": [{ "setting_id": "preset", "setting_value": "other" }]
+    },
+    {
+      "id": "custom-reboot",
+      "name": "Custom Reboot",
+      "description": "Command to run when rebooting",
+      "setting_type": "Text",
+      "value": "",
+      "conditional_show": [{ "setting_id": "preset", "setting_value": "other" }]
+    },
+    {
+      "id": "custom-hibernate",
+      "name": "Custom Hibernate",
+      "description": "Command to run when hibernating",
+      "setting_type": "Text",
+      "value": "",
+      "conditional_show": [{ "setting_id": "preset", "setting_value": "other" }]
+    },
+    {
+      "id": "custom-suspend",
+      "name": "Custom Suspend",
+      "description": "Command to run when suspending",
+      "setting_type": "Text",
+      "value": "",
+      "conditional_show": [{ "setting_id": "preset", "setting_value": "other" }]
+    },
+    {
+      "id": "custom-logout",
+      "name": "Custom Logout",
+      "description": "Command to run when logging out",
+      "setting_type": "Text",
+      "value": "",
+      "conditional_show": [{ "setting_id": "preset", "setting_value": "other" }]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[package]
+name = "session-manager"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tigris-rs = { path = "/home/lighttigerxiv/projects/whiskers-apps/tigris-rs", features = [
+    "extension",
+] }
+sniffer-rs = "1.1.2"
