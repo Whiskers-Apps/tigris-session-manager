@@ -36,6 +36,10 @@ fn main() {
                 results.push(get_search_result("Lock", "lock", "lock", false));
             }
 
+            if sniffer.matches("log out/sign out", &search_text) {
+                results.push(get_search_result("Log Out", "logout", "logout", false));
+            }
+
             if sniffer.matches("shutdown/power off", &search_text) {
                 results.push(get_search_result("Shutdown", "shutdown", "power", true));
             }
