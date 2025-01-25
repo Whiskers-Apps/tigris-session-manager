@@ -1,7 +1,4 @@
-use std::{
-    env,
-    process::Command,
-};
+use std::{env, process::Command};
 
 use features::{
     icons::get_icon,
@@ -37,7 +34,7 @@ fn main() {
             }
 
             if sniffer.matches("log out/sign out", &search_text) {
-                results.push(get_search_result("Log Out", "logout", "logout", false));
+                results.push(get_search_result("Log Out", "logout", "logout", true));
             }
 
             if sniffer.matches("shutdown/power off", &search_text) {
@@ -48,8 +45,8 @@ fn main() {
                 results.push(get_search_result("Reboot", "reboot", "reboot", true));
             }
 
-            if sniffer.matches("hybernate", &search_text) {
-                results.push(get_search_result("Hybernate", "hybernate", "sleep", false));
+            if sniffer.matches("hibernate", &search_text) {
+                results.push(get_search_result("Hibernate", "hibernate", "sleep", false));
             }
 
             if sniffer.matches("suspend", &search_text) {
@@ -81,7 +78,7 @@ fn main() {
 
             let command = match action.as_str() {
                 "shutdown" => session_commands.shutdown,
-                "restart" => session_commands.restart,
+                "reboot" => session_commands.reboot,
                 "suspend" => session_commands.suspend,
                 "hibernate" => session_commands.hibernate,
                 "logout" => session_commands.logout,
@@ -94,6 +91,7 @@ fn main() {
                 .output()
                 .expect("Error running command");
         }
+        _ => {}
     }
 }
 

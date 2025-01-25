@@ -1,7 +1,7 @@
 {
   "id": "session-manager",
   "name": "Session Manager",
-  "description": "An extension to quickly shutdown, reboot, hybernate, suspend and lock the pc",
+  "description": "An extension to quickly shutdown, reboot, hibernate, suspend and lock the pc",
   "creator_name": "Whiskers Apps",
   "creator_link": "https://github.com/Whiskers-Apps",
   "repository_link": "https://github.com/Whiskers-Apps/tigris-session-manager",

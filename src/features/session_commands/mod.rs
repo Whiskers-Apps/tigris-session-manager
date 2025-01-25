@@ -4,7 +4,7 @@ use crate::EXTENSION_ID;
 
 pub struct SessionCommands {
     pub shutdown: String,
-    pub restart: String,
+    pub reboot: String,
     pub suspend: String,
     pub hibernate: String,
     pub logout: String,
@@ -22,7 +22,7 @@ impl SessionCommands {
     ) -> Self {
         Self {
             shutdown: shutdown.to_string(),
-            restart: restart.to_string(),
+            reboot: restart.to_string(),
             suspend: suspend.to_string(),
             hibernate: hibernate.to_string(),
             logout: logout.to_string(),
