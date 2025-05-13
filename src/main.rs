@@ -5,10 +5,10 @@ use features::{
     session_commands::{get_custom_commands, get_session_commands},
 };
 use sniffer_rs::sniffer::Sniffer;
-use tigris_rs::features::{
+use tigris_core::features::{
     actions::{ResultAction, RunExtensionAction},
     api::{
-        get_extension_request, send_search_results,
+        get_request, return_search_results,
         RequestType::{GetResults, RunAction},
     },
     search_results::SearchResult,
@@ -20,7 +20,7 @@ pub mod features;
 const EXTENSION_ID: &str = "session-manager";
 
 fn main() {
-    let extension_request = get_extension_request();
+    let extension_request = get_request().unwrap();
 
     match extension_request.request_type {
         GetResults => {
@@ -53,7 +53,7 @@ fn main() {
                 results.push(get_search_result("Suspend", "suspend", "sleep", false));
             }
 
-            send_search_results(&results);
+            return_search_results(&results);
         }
         RunAction => {
             let request = extension_request.run_action_request.unwrap();

@@ -1,6 +1,6 @@
 use std::path::PathBuf;
 
-use tigris_rs::features::extensions::get_extension_dir;
+use tigris_core::features::extensions::get_extension_dir;
 
 use crate::EXTENSION_ID;
 

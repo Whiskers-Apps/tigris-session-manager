@@ -1,4 +1,4 @@
-use tigris_rs::features::settings::get_extension_setting;
+use tigris_core::features::settings::get_extension_setting;
 
 use crate::EXTENSION_ID;
 
